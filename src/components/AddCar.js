@@ -16,6 +16,7 @@ const AddCar = ({ options }) => {
     puissanceFiscale: "",
     prix: 0,
     titre: "",
+    texte: "",
   })
 
   const handleChange = e => {
@@ -71,7 +72,11 @@ const AddCar = ({ options }) => {
             type="text"
             onChange={handleChange} />
         </div>
-        <Textarea />
+        <Label text="Texte de l'annonce"></Label>
+        <Textarea
+          name="texte"
+          value={formData.texte}
+          onChange={handleChange}/>
       </form>
     </>
   )

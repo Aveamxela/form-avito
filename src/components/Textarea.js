@@ -1,4 +1,4 @@
-const Textarea = () => {
-    return <h1>TEST textarea</h1>;
+const Textarea = ({ name, value, onChange }) => {
+    return <textarea name={name} value={value} onChange={onChange}></textarea>
 };
 export default Textarea;
