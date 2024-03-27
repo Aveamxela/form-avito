@@ -1,4 +1,3 @@
-import RadioBtns from "./components/RadioBtns";
 import AddCar from "./components/AddCar";
 
 export default function App() {

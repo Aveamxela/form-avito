@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const RadioBtns = () => {
+const RadioBtns = (onChange) => {
     const radioForm = [
         {
             name: "Type de carburant",
@@ -28,7 +28,7 @@ const RadioBtns = () => {
                 "Importée neuve",
             ],
         },
-        { name: "Nombre de portes", options: [3, 5] },
+        { name: "Nombre de portes", options: ["3", "5"] },
         { name: "Première main", options: ["Oui", "Non"] },
     ];
 
@@ -42,7 +42,7 @@ const RadioBtns = () => {
     });
     console.log({selectedOption})
     
-    const handleChange = (event) => {
+    const handleChangeRadio = (event) => {
         const { name, value} = event.target;
         console.log(name)
         setSelectedOption((prevState) => {
@@ -66,14 +66,13 @@ const RadioBtns = () => {
                         value={option}
                         //Vérifie que 
                         checked={selectedOption[item.name]===option}
-                        onChange={handleChange}
+                        onChange={handleChangeRadio}
                     />
                     <label>{option}</label>
                 </div>
             ))}
         </div>
     ));
-
     return <div>{listRadioBtns}</div>;
 };
 export default RadioBtns;

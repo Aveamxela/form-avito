@@ -11,20 +11,26 @@ const AddCar = ({ options }) => {
   console.log(faker);
 
   const [formData, setFormData] = useState({
-    marque: "",
-    annee: "",
-    kilometrage: 0,
-    puissanceFiscale: "",
-    prix: 0,
-    titre: "",
-  })
+      marque: "",
+      annee: "",
+      kilometrage: 0,
+      puissanceFiscale: "",
+      prix: 0,
+      titre: "",
+      "Type de carburant": "",
+      "Boite de vitesses": "",
+      Etat: "",
+      Origine: "",
+      "Nombre de portes": "",
+      "Première main": "",
+  });
 
   const handleChange = e => {
-    const { name } = e.target
+    const { name, value } = e.target
 
     setFormData(prevState => ({
       ...prevState,
-      [name]: e.target.value,
+      [name]: value
     }))
   }
 
