@@ -1,8 +1,8 @@
-const Select = ({ options, value, handleChange }) => {
+const Select = ({ name, options, value, onChange }) => {
     return (
-      <select onChange={handleChange}>
-        {options.map(option => {
-          return <option>{option}</option>
+      <select name={name} value={value} onChange={onChange}>
+        {options.map((option, index) => {
+          return <option key={index}>{option}</option>
         }) }
       </select>
     );
