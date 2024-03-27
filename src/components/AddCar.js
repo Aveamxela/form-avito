@@ -11,6 +11,8 @@ const AddCar = () => {
     annee: "",
     kilometrage: 0,
     puissanceFiscale: "",
+    prix: 0,
+    titre: "",
   })
 
   const handleChange = e => {
@@ -26,8 +28,6 @@ const AddCar = () => {
     <>
       <form>
         <div>
-          <Input />
-          <Textarea />
           <Label text="Marque" />
           <Select
             name="marque"
@@ -53,6 +53,22 @@ const AddCar = () => {
             value={formData.puissanceFiscale}
             onChange={handleChange} />
         </div>
+
+        <div>
+          <Label text="Prix" />
+          <Input
+            name="prix"
+            value={formData.prix}
+            type="number"
+            onChange={handleChange} />
+          <Label text="Texte de l'annonce"/>
+          <Input
+            name="titre"
+            value={formData.titre}
+            type="text"
+            onChange={handleChange} />
+        </div>
+        <Textarea />
       </form>
     </>
   )
