@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Select from "./Select";
-import Input from "./components/Input";
-import Textarea from "./components/Textarea";
+import Input from "./Input";
+import Textarea from "./Textarea";
 
 const AddCar = () => {
   const [formData, setFormData] = useState({
