@@ -64,7 +64,7 @@ const RadioBtns = (onChange) => {
                         type="radio"
                         name={item.name}
                         value={option}
-                        //Vérifie que 
+                        //Vérifie que la valeur contenue dans notre catégorie est égale à l'option
                         checked={selectedOption[item.name]===option}
                         onChange={handleChangeRadio}
                     />
