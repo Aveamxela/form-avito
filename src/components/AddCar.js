@@ -100,15 +100,49 @@ const AddCar = ({ options }) => {
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
-                    title="Type de carburant"
+                    title="Boite de vitesses"
+                    labels={["Automatique", "Manuelle"]}
+                    name="type_vitesses"
+                    onChoiceradio={handleChangeRadio}
+                />
+                <RadioBtns
+                    title="Etat"
                     labels={[
-                        "Diesel",
-                        "Essence",
-                        "Electrique",
-                        "LPG",
-                        "Hybride",
+                        "Excellent",
+                        "Très bon",
+                        "Bon",
+                        "Correct",
+                        "Endommagé",
+                        "Pour pièces",
+                        "Neuf",
                     ]}
-                    name="type_carburant"
+                    name="etat"
+                    onChoiceradio={handleChangeRadio}
+                />
+                <RadioBtns
+                    title="Origine"
+                    labels={[
+                        "Dédouanée",
+                        "Pas encore dédouanée",
+                        "WW au Maroc",
+                        "Importée neuve",
+                    ]}
+                    name="origine"
+                    onChoiceradio={handleChangeRadio}
+                />
+                <RadioBtns
+                    title="Nombre de portes"
+                    labels={[3, 5]}
+                    name="porte"
+                    onChoiceradio={handleChangeRadio}
+                />
+                <RadioBtns
+                    title="Première main"
+                    labels={[
+                        "Oui",
+                        "Non",
+                    ]}
+                    name="premiere_main"
                     onChoiceradio={handleChangeRadio}
                 />
                 <Textarea />
