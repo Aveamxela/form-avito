@@ -78,8 +78,12 @@ const AddCar = ({ options }) => {
             type="text"
             onChange={handleChange} />
         </div>
+        <Label text="Texte de l'annonce"></Label>
+        <Textarea
+          name="texte"
+          value={formData.texte}
+          onChange={handleChange}/>
         <RadioBtns/>
-        <Textarea />
       </form>
     </>
   )
