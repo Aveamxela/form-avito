@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Select from "./Select";
+import Input from "./components/Input";
+import Textarea from "./components/Textarea";
 
 const AddCar = () => {
   const [formData, setFormData] = useState({
@@ -22,6 +24,8 @@ const AddCar = () => {
     <>
       <form>
         <div>
+          <Input />
+          <Textarea />
           <Select
             name="marque"
             options={['','MG', 'Alpha Romeo', 'Chevrolet', 'Chrysler']}
