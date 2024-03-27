@@ -6,7 +6,8 @@ export default function App() {
     return (
         <>
             <Input />
-            <Select />
+            <Select options={['option 1', 'option 2', 'option 3']} />
+            <Select options={['option 1', 'option 2', 'option 3', 'option 4']} />
             <Textarea />
         </>
     );
