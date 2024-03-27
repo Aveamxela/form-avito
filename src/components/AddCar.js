@@ -3,6 +3,7 @@ import Select from "./Select";
 import Input from "./Input";
 import Textarea from "./Textarea";
 import Label from "./Label";
+import RadioBtns from "./RadioBtns";
 
 
 const AddCar = ({ options }) => {
@@ -10,21 +11,26 @@ const AddCar = ({ options }) => {
   console.log(faker);
 
   const [formData, setFormData] = useState({
-    marque: "",
-    annee: "",
-    kilometrage: 0,
-    puissanceFiscale: "",
-    prix: 0,
-    titre: "",
-    texte: "",
-  })
+      marque: "",
+      annee: "",
+      kilometrage: 0,
+      puissanceFiscale: "",
+      prix: 0,
+      titre: "",
+      "Type de carburant": "",
+      "Boite de vitesses": "",
+      Etat: "",
+      Origine: "",
+      "Nombre de portes": "",
+      "Première main": "",
+  });
 
   const handleChange = e => {
-    const { name } = e.target
+    const { name, value } = e.target
 
     setFormData(prevState => ({
       ...prevState,
-      [name]: e.target.value,
+      [name]: value
     }))
   }
 
@@ -77,6 +83,7 @@ const AddCar = ({ options }) => {
           name="texte"
           value={formData.texte}
           onChange={handleChange}/>
+        <RadioBtns/>
       </form>
     </>
   )
