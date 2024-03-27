@@ -1,4 +1,10 @@
-const Select = () => {
-    return <h1>TEST select</h1>;
+const Select = ({ name, options, value, onChange }) => {
+    return (
+      <select name={name} value={value} onChange={onChange}>
+        {options.map((option, index) => {
+          return <option key={index}>{option}</option>
+        }) }
+      </select>
+    );
 };
 export default Select;
