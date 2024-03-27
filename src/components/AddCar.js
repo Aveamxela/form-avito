@@ -87,7 +87,12 @@ const AddCar = ({ options }) => {
                         onChange={handleChange}
                     />
                 </div>
-                <RadioBtns
+                <Label text="Texte de l'annonce"></Label>
+        <Textarea
+          name="texte"
+          value={formData.texte}
+          onChange={handleChange}/>
+        <RadioBtns
                     title="Type de carburant"
                     labels={[
                         "Diesel",
@@ -145,8 +150,7 @@ const AddCar = ({ options }) => {
                     name="premiere_main"
                     onChoiceradio={handleChangeRadio}
                 />
-                <Textarea />
-            </form>
+                    </form>
         </>
     );
 };
