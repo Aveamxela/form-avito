@@ -70,6 +70,39 @@ const AddCar = ({ options }) => {
                         onChange={handleChange}
                     />
                 </div>
+    return (
+        <>
+            <form>
+                <div>
+                    <Label text="Marque" />
+                    <Select
+                        name="marque"
+                        options={marque}
+                        value={formData.marque}
+                        onChange={handleChange}
+                    />
+                    <Label text="Année-Modèle" />
+                    <Select
+                        name="annee"
+                        options={anneeModele}
+                        value={formData.annee}
+                        onChange={handleChange}
+                    />
+                    <Label text="Kilométrage" />
+                    <Select
+                        name="kilometrage"
+                        options={kilometrage}
+                        value={formData.kilometrage}
+                        onChange={handleChange}
+                    />
+                    <Label text="Puissance fiscale" />
+                    <Select
+                        name="puissanceFiscale"
+                        options={puissanceFiscale}
+                        value={formData.puissanceFiscale}
+                        onChange={handleChange}
+                    />
+                </div>
 
                 <div>
                     <Label text="Prix" />
