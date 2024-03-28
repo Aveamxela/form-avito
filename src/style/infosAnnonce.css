@@ -1,0 +1,39 @@
+.allInfos {
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    justify-content: space-between;
+}
+.info > label {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.info {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="number"],
+input[type="text"],
+textarea {
+    margin-bottom: 30px;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: transparent;
+    border: 1px solid rgb(212, 212, 212);
+    border-radius: 8px;
+}
+input[type="number"]:focus ,
+input[type="text"]:focus ,
+textarea:focus {
+        outline-color:rgb(46, 107, 255)
+
+}

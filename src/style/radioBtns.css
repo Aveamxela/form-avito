@@ -1,6 +1,10 @@
-.radioBtns{
+.allRadioBtns{
+    margin-bottom: 30px;
+}.radioBtns{
     display: flex;
     flex-direction: row;
+    margin-bottom: 30px;
+
 }
 input[type="radio"]{
     display: none;
