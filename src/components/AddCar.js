@@ -7,8 +7,7 @@ import RadioBtns from "./RadioBtns";
 
 
 const AddCar = ({ options }) => {
-  const { marque, anneeModele, kilometrage, puissanceFiscale, fake: { faker } } = options;
-  console.log(faker);
+  const { marque, anneeModele, kilometrage, puissanceFiscale } = options;
 
   const [formData, setFormData] = useState({
       marque: "",
