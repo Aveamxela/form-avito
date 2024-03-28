@@ -6,14 +6,14 @@ import Label from "./Label";
 import RadioBtns from "./RadioBtns";
 
 const AddCar = ({ options }) => {
+
     const {
         marque,
         anneeModele,
         kilometrage,
         puissanceFiscale,
-        fake: { faker },
     } = options;
-    console.log(faker);
+
     const [globalState, setGlobalState] = useState({ radio: "" });
     const [formData, setFormData] = useState({
         marque: "",
@@ -79,7 +79,7 @@ const AddCar = ({ options }) => {
                         type="number"
                         onChange={handleChange}
                     />
-                    <Label text="Texte de l'annonce" />
+                    <Label text="Titre de l'annonce" />
                     <Input
                         name="titre"
                         value={formData.titre}
@@ -88,11 +88,11 @@ const AddCar = ({ options }) => {
                     />
                 </div>
                 <Label text="Texte de l'annonce"></Label>
-        <Textarea
-          name="texte"
-          value={formData.texte}
-          onChange={handleChange}/>
-        <RadioBtns
+                <Textarea
+                  name="texte"
+                  value={formData.texte}
+                  onChange={handleChange}/>
+                <RadioBtns
                     title="Type de carburant"
                     labels={[
                         "Diesel",
