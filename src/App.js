@@ -1,5 +1,4 @@
 import AddCar from "./components/AddCar";
-import CarList from "./components/CarList";
 
 export default function App() {
   const options = {
@@ -11,7 +10,6 @@ export default function App() {
     return (
         <>
             <AddCar options={options}/>
-            <CarList cars={AddCar} />
         </>
     );
 }
