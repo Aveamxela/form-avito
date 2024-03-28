@@ -15,8 +15,8 @@ const options = {
 
 const details = ['Toit ouvrant', 'Climatisation', 'Radar de recul', 'Ordinateur de bord'];
 
-const savedObject =  localStorage.getItem("myObjectTest");
-const cars = [JSON.parse(savedObject)];
+const savedObject =  localStorage.getItem("CarsData");
+const cars = JSON.parse(savedObject);
 console.log(cars);
 
 // const handleSubmit = (formData) => {

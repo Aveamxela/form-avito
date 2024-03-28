@@ -68,7 +68,9 @@ const AddCar = ({ options, details }) => {
       e.preventDefault();
 
       alert(`Votre voiture a bien été enregistrée !`);
-      localStorage.setItem("myObjectTest",  JSON.stringify(formData));
+      let carsData = JSON.parse(localStorage.getItem('CarsData')) || [];
+      carsData.push(formData);
+      localStorage.setItem("CarsData",  JSON.stringify(carsData));
     };
 
     return (

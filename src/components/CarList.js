@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const CarList = ({cars}) => {
-
+  console.log(cars);
   return (
     <div>
       <h3>Liste de voitures :</h3>
