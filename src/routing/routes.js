@@ -15,6 +15,10 @@ const options = {
 
 const details = ['Toit ouvrant', 'Climatisation', 'Radar de recul', 'Ordinateur de bord'];
 
+const savedObject =  localStorage.getItem("myObjectTest");
+const cars = [JSON.parse(savedObject)];
+console.log(cars);
+
 // const handleSubmit = (formData) => {
 //   setCars([...cars, formData]);
 // };
@@ -30,6 +34,6 @@ export const router = createBrowserRouter([
   },
   {
     path: "/cars",
-    element: <CarList />,
+    element: <CarList cars={cars}/>,
   }
 ]);

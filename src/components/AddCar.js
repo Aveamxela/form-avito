@@ -5,6 +5,7 @@ import Textarea from "./Textarea";
 import Label from "./Label";
 import RadioBtns from "./RadioBtns";
 import Checkbox from "./Checkbox";
+import { Link } from "react-router-dom";
 
 const AddCar = ({ options, details }) => {
 
@@ -66,8 +67,8 @@ const AddCar = ({ options, details }) => {
     const handleSubmit = (e) => {
       e.preventDefault();
 
-      alert(`Votre voiture a bien été enregistrée !`)
-      console.log(formData);
+      alert(`Votre voiture a bien été enregistrée !`);
+      localStorage.setItem("myObjectTest",  JSON.stringify(formData));
     };
 
     return (
@@ -212,6 +213,7 @@ const AddCar = ({ options, details }) => {
                     onChange={handleChange}
                 />
                 <button>Soumettre</button>
+                <Link to="/cars">Voir les voitures</Link>
             </form>
         </>
     );
