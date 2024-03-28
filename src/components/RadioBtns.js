@@ -10,7 +10,7 @@ const RadioBtns = ({ title, labels, name, onChoiceradio }) => {
                             type="radio"
                             name={name}
                             value={label}
-                            onChange={(e) => onChoiceradio(e.target.value)}
+                            onChange={(e) => onChoiceradio(name,e.target.value)}
                         />
                     </div>
                 );

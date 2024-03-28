@@ -15,7 +15,7 @@ const AddCar = ({ options }) => {
     } = options;
     console.log(faker);
 
-    const [globalState, setGlobalState] = useState({ radio: "" });
+    const [globalState, setGlobalState] = useState({});
 
     const [formData, setFormData] = useState({
         marque: "",
@@ -35,8 +35,12 @@ const AddCar = ({ options }) => {
         }));
     };
 
-    const handleChangeRadio = (radioChoice) => {
-        setGlobalState({ radio: radioChoice });
+    const handleChangeRadio = (name,value) => {
+        console.log(name);
+        setGlobalState((prevState) => ({
+            ...prevState,
+            [name]: value,
+        }));
     };
 
     return (
@@ -101,12 +105,14 @@ const AddCar = ({ options }) => {
                     name="type_carburant"
                     onChoiceradio={handleChangeRadio}
                 />
-               
+
                 <RadioBtns
                     title="Boite de vitesses"
                     labels={["Automatique", "Manuelle"]}
                     name="type_vitesses"
-                    onChoiceradio={handleChangeRadio}
+                    onChoiceradio={(radioChoice) =>
+                        handleChangeRadio("type_vitesses", radioChoice)
+                    }
                 />
                 <RadioBtns
                     title="Etat"
