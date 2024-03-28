@@ -73,61 +73,53 @@ const AddCar = ({ options, details, onSubmit }) => {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <Label text="Marque" />
-                    <Select
-                        name="marque"
-                        options={marque}
-                        value={formData.marque}
-                        onChange={handleChange}
-                    />
-                    <Label text="Année-Modèle" />
-                    <Select
-                        name="annee"
-                        options={anneeModele}
-                        value={formData.annee}
-                        onChange={handleChange}
-                    />
-                    <Label text="Kilométrage" />
-                    <Select
-                        name="kilometrage"
-                        options={kilometrage}
-                        value={formData.kilometrage}
-                        onChange={handleChange}
-                    />
-                    <Label text="Puissance fiscale" />
-                    <Select
-                        name="puissanceFiscale"
-                        options={puissanceFiscale}
-                        value={formData.puissanceFiscale}
-                        onChange={handleChange}
-                    />
-                </div>
-
-                <div>
-                    <Label text="Prix" />
-                    <Input
-                        name="prix"
-                        value={formData.prix}
-                        type="number"
-                        onChange={handleChange}
-                    />
-                    <Label text="Titre de l'annonce" />
-                    <Input
-                        name="titre"
-                        value={formData.titre}
-                        type="text"
-                        onChange={handleChange}
-                        required={true}
-                    />
+                <div className="allSelect">
+                    <div className="selectItem">
+                        <Label text="Marque" />
+                        <Select
+                            name="marque"
+                            options={marque}
+                            value={formData.marque}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="selectItem">
+                        <Label text="Année-Modèle" />
+                        <Select
+                            name="annee"
+                            options={anneeModele}
+                            value={formData.annee}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="selectItem">
+                        <Label text="Kilométrage" />
+                        <Select
+                            name="kilometrage"
+                            options={kilometrage}
+                            value={formData.kilometrage}
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="selectItem">
+                        <Label text="Puissance fiscale" />
+                        <Select
+                            name="puissanceFiscale"
+                            options={puissanceFiscale}
+                            value={formData.puissanceFiscale}
+                            onChange={handleChange}
+                        />
+                    </div>
                 </div>
                 <Label text="Texte de l'annonce"></Label>
                 <Textarea
-                  name="texte"
-                  value={formData.texte}
-                  onChange={handleChange}
-                  required={true}/>
+                    name="texte"
+                    value={formData.texte}
+                    onChange={handleChange}
+                    required={true}
+                />
                 <RadioBtns
+                    className="radioBtn"
                     title="Type de carburant"
                     labels={[
                         "Diesel",
@@ -142,6 +134,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                 />
 
                 <RadioBtns
+                    className="radioBtn"
                     title="Boite de vitesses"
                     labels={["Automatique", "Manuelle"]}
                     name="type_vitesses"
@@ -149,6 +142,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     required={true}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Etat"
                     labels={[
                         "Excellent",
@@ -163,6 +157,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Origine"
                     labels={[
                         "Dédouanée",
@@ -174,27 +169,56 @@ const AddCar = ({ options, details, onSubmit }) => {
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Nombre de portes"
                     labels={[3, 5]}
                     name="porte"
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Première main"
-                    labels={[
-                        "Oui",
-                        "Non",
-                    ]}
+                    labels={["Oui", "Non"]}
                     name="premiere_main"
                     onChoiceradio={handleChangeRadio}
                 />
+            
+                <div className="allInfos">
+                    <div className="info">
+                        <Label text="Prix" />
+                        <Input
+                            name="prix"
+                            value={formData.prix}
+                            type="number"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className="info">
+                    <Label text="Titre de l'annonce" />
+                    <Input
+                        name="titre"
+                        value={formData.titre}
+                        type="text"
+                        onChange={handleChange}
+                    />
+                    </div>
+                    <div className="info">
+                    <Label text="Texte de l'annonce"></Label>
+                    <Textarea
+                        name="texte"
+                        value={formData.texte}
+                        onChange={handleChange}
+                    />
+                    </div>
+                </div>
                 <Checkbox
-                  details={details}
-                  type="checkbox"
-                  checked={false}
-                  onChange={handleChange} />
-                  <button>Soumettre</button>
-                    </form>
+                    details={details}
+                    type="checkbox"
+                    checked={false}
+                    onChange={handleChange}
+                />
+                <button>Soumettre</button>
+            </form>
         </>
     );
 };

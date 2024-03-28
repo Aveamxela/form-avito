@@ -1,0 +1,33 @@
+.allRadioBtns{
+    margin-bottom: 30px;
+}.radioBtns{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 30px;
+
+}
+input[type="radio"]{
+    display: none;
+}
+input[type="radio"].radioBtn + label{
+    font-size: 16px;
+    color: rgb(74, 74, 74);
+    cursor: pointer;
+    border: 1px solid rgb(17, 37, 62);
+    border-radius: 100px;
+    padding: 10px 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    outline: none;
+    user-select: none;
+    margin: 5px;
+}
+input[type="radio"].radioBtn + label:hover{
+    color: rgb(46, 107, 255);
+    border: 1px solid rgb(46, 107, 255);
+}
+input[type="radio"].radioBtn:checked + label{
+    color: rgb(46, 107, 255);
+    font-weight: 700;
+    border: 2px solid rgb(46, 107, 255);
+}
