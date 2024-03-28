@@ -56,16 +56,42 @@ const AddCar = ({ options, details }) => {
     };
 
     const handleChangeRadio = (name,value) => {
-        console.log(name);
+
         setFormData((prevState) => ({
             ...prevState,
             [name]: value,
         }));
     };
 
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const recapMessage = `
+        Marque: ${formData.marque}
+        Année: ${formData.annee}
+        Kilométrage: ${formData.kilometrage}
+        Puissance fiscale: ${formData.puissanceFiscale}
+        Prix: ${formData.prix}
+        Titre: ${formData.titre}
+        Type de carburant: ${formData.type_carburant}
+        Type de vitesses: ${formData.type_vitesses}
+        État: ${formData.etat}
+        Origine: ${formData.origine}
+        Porte: ${formData.porte}
+        Première main: ${formData.premiere_main}
+        Détails:
+        Toit ouvrant: ${formData.details["Toit ouvrant"] ? 'Oui' : 'Non'}
+        Climatisation: ${formData.details["Climatisation"] ? 'Oui' : 'Non'}
+        Radar de recul: ${formData.details["Radar de recul"] ? 'Oui' : 'Non'}
+        Ordinateur de bord: ${formData.details["Ordinateur de bord"] ? 'Oui' : 'Non'}
+    `;
+      alert(`Votre voiture  a bien été soumise! Voici le récapitulatif : ${recapMessage}`)
+      console.log(formData);
+    };
+
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div>
                     <Label text="Marque" />
                     <Select
@@ -138,9 +164,7 @@ const AddCar = ({ options, details }) => {
                     title="Boite de vitesses"
                     labels={["Automatique", "Manuelle"]}
                     name="type_vitesses"
-                    onChoiceradio={(radioChoice) =>
-                        handleChangeRadio("type_vitesses", radioChoice)
-                    }
+                    onChoiceradio={handleChangeRadio}
                     required={true}
                 />
                 <RadioBtns
@@ -188,6 +212,7 @@ const AddCar = ({ options, details }) => {
                   type="checkbox"
                   checked={false}
                   onChange={handleChange} />
+                  <button>Soumettre</button>
                     </form>
         </>
     );
