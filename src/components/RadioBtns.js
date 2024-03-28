@@ -1,5 +1,5 @@
-const RadioBtns = ({ title, labels, name, onChoiceradio }) => {
-    
+const RadioBtns = ({ title, labels, name, onChoiceradio, required }) => {
+
     return (
         <>
             <h5>{title}</h5>
@@ -12,6 +12,7 @@ const RadioBtns = ({ title, labels, name, onChoiceradio }) => {
                             name={name}
                             value={label}
                             onChange={(e) => onChoiceradio(name,e.target.value)}
+                            required={required}
                         />
                     </div>
                 );
