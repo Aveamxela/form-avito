@@ -6,7 +6,7 @@ import Label from "./Label";
 import RadioBtns from "./RadioBtns";
 import Checkbox from "./Checkbox";
 
-const AddCar = ({ options, details, onSubmit }) => {
+const AddCar = ({ options, details }) => {
 
     const {
         marque,
@@ -67,7 +67,7 @@ const AddCar = ({ options, details, onSubmit }) => {
       e.preventDefault();
 
       alert(`Votre voiture a bien été enregistrée !`)
-      onSubmit(formData);
+      console.log(formData);
     };
 
     return (
@@ -215,6 +215,6 @@ const AddCar = ({ options, details, onSubmit }) => {
             </form>
         </>
     );
-};
 
+};
 export default AddCar;
