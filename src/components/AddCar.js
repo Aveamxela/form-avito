@@ -15,6 +15,7 @@ const AddCar = ({ options }) => {
     } = options;
 
     const [globalState, setGlobalState] = useState({ radio: "" });
+
     const [formData, setFormData] = useState({
         marque: "",
         annee: "",
@@ -26,7 +27,7 @@ const AddCar = ({ options }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-
+        console.log(e.target.value);
         setFormData((prevState) => ({
             ...prevState,
             [name]: value,
