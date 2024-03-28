@@ -4,8 +4,9 @@ import Input from "./Input";
 import Textarea from "./Textarea";
 import Label from "./Label";
 import RadioBtns from "./RadioBtns";
+import Checkbox from "./Checkbox";
 
-const AddCar = ({ options }) => {
+const AddCar = ({ options, details }) => {
 
     const {
         marque,
@@ -23,15 +24,31 @@ const AddCar = ({ options }) => {
         puissanceFiscale: "",
         prix: 0,
         titre: "",
+        details: {
+          "Toit ouvrant": false,
+          "Climatisation": false,
+          "Radar de recul": false,
+          "Ordinateur de bord": false,
+        },
     });
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
-        console.log(e.target);
-        setFormData((prevState) => ({
-            ...prevState,
-            [name]: value,
-        }));
+        const { name, value, type, checked } = e.target;
+
+        setFormData((prevState) => {
+          if (type === 'checkbox') {
+              return {
+                  ...prevState,
+                  details: { ...prevState.details, [name]: checked }
+              };
+          } else {
+              return {
+                  ...prevState,
+                  [name]: value
+              };
+          }
+      });
+
     };
 
     const handleChangeRadio = (name,value) => {
@@ -162,6 +179,11 @@ const AddCar = ({ options }) => {
                     name="premiere_main"
                     onChoiceradio={handleChangeRadio}
                 />
+                <Checkbox
+                  details={details}
+                  type="checkbox"
+                  checked={false}
+                  onChange={handleChange} />
                     </form>
         </>
     );
