@@ -6,7 +6,7 @@ import Label from "./Label";
 import RadioBtns from "./RadioBtns";
 import Checkbox from "./Checkbox";
 
-const AddCar = ({ options, details }) => {
+const AddCar = ({ options, details, onSubmit }) => {
 
     const {
         marque,
@@ -66,27 +66,8 @@ const AddCar = ({ options, details }) => {
     const handleSubmit = (e) => {
       e.preventDefault();
 
-      const recapMessage = `
-        Marque: ${formData.marque}
-        Année: ${formData.annee}
-        Kilométrage: ${formData.kilometrage}
-        Puissance fiscale: ${formData.puissanceFiscale}
-        Prix: ${formData.prix}
-        Titre: ${formData.titre}
-        Type de carburant: ${formData.type_carburant}
-        Type de vitesses: ${formData.type_vitesses}
-        État: ${formData.etat}
-        Origine: ${formData.origine}
-        Porte: ${formData.porte}
-        Première main: ${formData.premiere_main}
-        Détails:
-        Toit ouvrant: ${formData.details["Toit ouvrant"] ? 'Oui' : 'Non'}
-        Climatisation: ${formData.details["Climatisation"] ? 'Oui' : 'Non'}
-        Radar de recul: ${formData.details["Radar de recul"] ? 'Oui' : 'Non'}
-        Ordinateur de bord: ${formData.details["Ordinateur de bord"] ? 'Oui' : 'Non'}
-    `;
-      alert(`Votre voiture  a bien été soumise! Voici le récapitulatif : ${recapMessage}`)
-      console.log(formData);
+      alert(`Votre voiture a bien été enregistrée !`)
+      onSubmit(formData);
     };
 
     return (
