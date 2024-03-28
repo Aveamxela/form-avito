@@ -12,14 +12,25 @@
     margin-bottom: 30px;
     width: 45%;
 }
-select{
-    margin-top:10px;
-    display: flex;
-    align-items: center;
-    position: relative;
+select, .iconAnd{
     width: 100%;
-    padding: 8px;
+    border:none;
+    cursor: pointer;
+
+}
+label+.iconAnd{
     border: 1px solid rgb(212, 212, 212);
     border-radius: 8px;
-    cursor: pointer;
+}
+.iconAnd{
+    margin-top:10px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    gap:10px
+
+}
+select:focus{
+    outline-color:transparent;
+    border:none
 }

@@ -1,14 +1,17 @@
-const RadioBtns = ({ id,className,title, labels, name, onChoiceradio, required }) => {
+const RadioBtns = ({ id,icon,className,title, labels, name, onChoiceradio, required }) => {
     
     return (
         <>
-            <h4>{title}</h4>
+            <div className="iconAnd">
+                <div>{icon}</div>
+                <h4>{title}</h4>
+            </div>
             <div className="radioBtns">
                 {labels.map((label, index, e) => {
                     return (
                         <div key={index}>
                             <input
-                            className={className}
+                                className={className}
                                 id={label}
                                 type="radio"
                                 name={name}
@@ -17,7 +20,7 @@ const RadioBtns = ({ id,className,title, labels, name, onChoiceradio, required }
                                     onChoiceradio(name, e.target.value)
                                 }
                                 required={required}
-                        />
+                            />
                             <label htmlFor={label}>{label}</label>
                         </div>
                     );

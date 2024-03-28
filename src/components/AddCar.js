@@ -5,15 +5,25 @@ import Textarea from "./Textarea";
 import Label from "./Label";
 import RadioBtns from "./RadioBtns";
 import Checkbox from "./Checkbox";
+import { MdCalendarToday } from "react-icons/md";
+import { MdBrandingWatermark } from "react-icons/md";
+import { TbGaugeFilled } from "react-icons/tb";
+import { TbEngine } from "react-icons/tb";
+import { IoIosPricetags } from "react-icons/io";
+import { TbCircleLetterT } from "react-icons/tb";
+import { CiLineHeight } from "react-icons/ci";
+import { BsFillFuelPumpFill } from "react-icons/bs";
+import { TbManualGearbox } from "react-icons/tb";
+import { WiStars } from "react-icons/wi";
+import { MdFlag } from "react-icons/md";
+import { GiCarDoor } from "react-icons/gi";
+import { GiCarKey } from "react-icons/gi";
+
+
+
 
 const AddCar = ({ options, details, onSubmit }) => {
-
-    const {
-        marque,
-        anneeModele,
-        kilometrage,
-        puissanceFiscale,
-    } = options;
+    const { marque, anneeModele, kilometrage, puissanceFiscale } = options;
 
     const [formData, setFormData] = useState({
         marque: "",
@@ -22,41 +32,39 @@ const AddCar = ({ options, details, onSubmit }) => {
         puissanceFiscale: "",
         prix: 0,
         titre: "",
-        "type_carburant": "",
-        "type_vitesses": "",
-        "etat": "",
-        "origine": "",
-        "porte": "",
-        "premiere_main": "",
+        type_carburant: "",
+        type_vitesses: "",
+        etat: "",
+        origine: "",
+        porte: "",
+        premiere_main: "",
         details: {
-          "Toit ouvrant": false,
-          "Climatisation": false,
-          "Radar de recul": false,
-          "Ordinateur de bord": false,
+            "Toit ouvrant": false,
+            Climatisation: false,
+            "Radar de recul": false,
+            "Ordinateur de bord": false,
         },
-
     });
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
 
         setFormData((prevState) => {
-          if (type === 'checkbox') {
-              return {
-                  ...prevState,
-                  details: { ...prevState.details, [name]: checked }
-              };
-          } else {
-              return {
-                  ...prevState,
-                  [name]: value
-              };
-          }
-      });
+            if (type === "checkbox") {
+                return {
+                    ...prevState,
+                    details: { ...prevState.details, [name]: checked },
+                };
+            } else {
+                return {
+                    ...prevState,
+                    [name]: value,
+                };
+            }
+        });
     };
 
-    const handleChangeRadio = (name,value) => {
-
+    const handleChangeRadio = (name, value) => {
         setFormData((prevState) => ({
             ...prevState,
             [name]: value,
@@ -64,10 +72,10 @@ const AddCar = ({ options, details, onSubmit }) => {
     };
 
     const handleSubmit = (e) => {
-      e.preventDefault();
+        e.preventDefault();
 
-      alert(`Votre voiture a bien été enregistrée !`)
-      onSubmit(formData);
+        alert(`Votre voiture a bien été enregistrée !`);
+        onSubmit(formData);
     };
 
     return (
@@ -76,45 +84,58 @@ const AddCar = ({ options, details, onSubmit }) => {
                 <div className="allSelect">
                     <div className="selectItem">
                         <Label text="Marque" />
-                        <Select
-                            name="marque"
-                            options={marque}
-                            value={formData.marque}
-                            onChange={handleChange}
-                        />
+                        <div className="iconAnd">
+                            <MdBrandingWatermark />
+                            <Select
+                                name="marque"
+                                options={marque}
+                                value={formData.marque}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                     <div className="selectItem">
                         <Label text="Année-Modèle" />
-                        <Select
-                            name="annee"
-                            options={anneeModele}
-                            value={formData.annee}
-                            onChange={handleChange}
-                        />
+                        <div className="iconAnd">
+                            <MdCalendarToday />
+                            <Select
+                                name="annee"
+                                options={anneeModele}
+                                value={formData.annee}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                     <div className="selectItem">
                         <Label text="Kilométrage" />
-                        <Select
-                            name="kilometrage"
-                            options={kilometrage}
-                            value={formData.kilometrage}
-                            onChange={handleChange}
-                        />
+                        <div className="iconAnd">
+                            <TbGaugeFilled />
+                            <Select
+                                name="kilometrage"
+                                options={kilometrage}
+                                value={formData.kilometrage}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                     <div className="selectItem">
                         <Label text="Puissance fiscale" />
-                        <Select
-                            name="puissanceFiscale"
-                            options={puissanceFiscale}
-                            value={formData.puissanceFiscale}
-                            onChange={handleChange}
-                        />
+                        <div className="iconAnd">
+                            <TbEngine />
+                            <Select
+                                name="puissanceFiscale"
+                                options={puissanceFiscale}
+                                value={formData.puissanceFiscale}
+                                onChange={handleChange}
+                            />
+                        </div>
                     </div>
                 </div>
                 <div className="allRadioBtns">
                     <RadioBtns
                         className="radioBtn"
                         title="Type de carburant"
+                        icon={<BsFillFuelPumpFill />}
                         labels={[
                             "Diesel",
                             "Essence",
@@ -130,6 +151,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     <RadioBtns
                         className="radioBtn"
                         title="Boite de vitesses"
+                        icon={<TbManualGearbox />}
                         labels={["Automatique", "Manuelle"]}
                         name="type_vitesses"
                         onChoiceradio={handleChangeRadio}
@@ -138,6 +160,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     <RadioBtns
                         className="radioBtn"
                         title="Etat"
+                        icon={<WiStars />}
                         labels={[
                             "Excellent",
                             "Très bon",
@@ -153,6 +176,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     <RadioBtns
                         className="radioBtn"
                         title="Origine"
+                        icon={<MdFlag />}
                         labels={[
                             "Dédouanée",
                             "Pas encore dédouanée",
@@ -165,6 +189,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     <RadioBtns
                         className="radioBtn"
                         title="Nombre de portes"
+                        icon={<GiCarDoor />}
                         labels={[3, 5]}
                         name="porte"
                         onChoiceradio={handleChangeRadio}
@@ -172,6 +197,7 @@ const AddCar = ({ options, details, onSubmit }) => {
                     <RadioBtns
                         className="radioBtn"
                         title="Première main"
+                        icon={<GiCarKey />}
                         labels={["Oui", "Non"]}
                         name="premiere_main"
                         onChoiceradio={handleChangeRadio}
@@ -179,7 +205,10 @@ const AddCar = ({ options, details, onSubmit }) => {
                 </div>
                 <div className="allInfos">
                     <div className="info">
-                        <Label text="Prix" />
+                        <div className="iconAnd">
+                            <IoIosPricetags />
+                            <Label text="Prix" />
+                        </div>
                         <Input
                             name="prix"
                             value={formData.prix}
@@ -188,7 +217,11 @@ const AddCar = ({ options, details, onSubmit }) => {
                         />
                     </div>
                     <div className="info">
-                        <Label text="Titre de l'annonce" />
+                        <div className="iconAnd">
+                            <TbCircleLetterT />
+                            <Label text="Titre de l'annonce" />
+                        </div>
+
                         <Input
                             name="titre"
                             value={formData.titre}
@@ -197,7 +230,10 @@ const AddCar = ({ options, details, onSubmit }) => {
                         />
                     </div>
                     <div className="info">
-                        <Label text="Texte de l'annonce"></Label>
+                        <div className="iconAnd">
+                            <CiLineHeight />
+                            <Label text="Texte de l'annonce" />
+                        </div>
                         <Textarea
                             name="texte"
                             value={formData.texte}
