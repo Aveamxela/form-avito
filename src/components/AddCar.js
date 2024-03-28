@@ -15,8 +15,6 @@ const AddCar = ({ options, details }) => {
         puissanceFiscale,
     } = options;
 
-    const [globalState, setGlobalState] = useState({});
-
     const [formData, setFormData] = useState({
         marque: "",
         annee: "",
@@ -24,12 +22,19 @@ const AddCar = ({ options, details }) => {
         puissanceFiscale: "",
         prix: 0,
         titre: "",
+        "type_carburant": "",
+        "type_vitesses": "",
+        "etat": "",
+        "origine": "",
+        "porte": "",
+        "premiere_main": "",
         details: {
           "Toit ouvrant": false,
           "Climatisation": false,
           "Radar de recul": false,
           "Ordinateur de bord": false,
         },
+
     });
 
     const handleChange = (e) => {
@@ -48,12 +53,11 @@ const AddCar = ({ options, details }) => {
               };
           }
       });
-
     };
 
     const handleChangeRadio = (name,value) => {
         console.log(name);
-        setGlobalState((prevState) => ({
+        setFormData((prevState) => ({
             ...prevState,
             [name]: value,
         }));
