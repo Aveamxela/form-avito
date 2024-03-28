@@ -111,78 +111,72 @@ const AddCar = ({ options, details, onSubmit }) => {
                         />
                     </div>
                 </div>
-                <Label text="Texte de l'annonce"></Label>
-                <Textarea
-                    name="texte"
-                    value={formData.texte}
-                    onChange={handleChange}
-                    required={true}
-                />
-                <RadioBtns
-                    className="radioBtn"
-                    title="Type de carburant"
-                    labels={[
-                        "Diesel",
-                        "Essence",
-                        "Electrique",
-                        "LPG",
-                        "Hybride",
-                    ]}
-                    name="type_carburant"
-                    onChoiceradio={handleChangeRadio}
-                    required={true}
-                />
+                <div className="allRadioBtns">
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Type de carburant"
+                        labels={[
+                            "Diesel",
+                            "Essence",
+                            "Electrique",
+                            "LPG",
+                            "Hybride",
+                        ]}
+                        name="type_carburant"
+                        onChoiceradio={handleChangeRadio}
+                        required={true}
+                    />
 
-                <RadioBtns
-                    className="radioBtn"
-                    title="Boite de vitesses"
-                    labels={["Automatique", "Manuelle"]}
-                    name="type_vitesses"
-                    onChoiceradio={handleChangeRadio}
-                    required={true}
-                />
-                <RadioBtns
-                    className="radioBtn"
-                    title="Etat"
-                    labels={[
-                        "Excellent",
-                        "Très bon",
-                        "Bon",
-                        "Correct",
-                        "Endommagé",
-                        "Pour pièces",
-                        "Neuf",
-                    ]}
-                    name="etat"
-                    onChoiceradio={handleChangeRadio}
-                />
-                <RadioBtns
-                    className="radioBtn"
-                    title="Origine"
-                    labels={[
-                        "Dédouanée",
-                        "Pas encore dédouanée",
-                        "WW au Maroc",
-                        "Importée neuve",
-                    ]}
-                    name="origine"
-                    onChoiceradio={handleChangeRadio}
-                />
-                <RadioBtns
-                    className="radioBtn"
-                    title="Nombre de portes"
-                    labels={[3, 5]}
-                    name="porte"
-                    onChoiceradio={handleChangeRadio}
-                />
-                <RadioBtns
-                    className="radioBtn"
-                    title="Première main"
-                    labels={["Oui", "Non"]}
-                    name="premiere_main"
-                    onChoiceradio={handleChangeRadio}
-                />
-            
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Boite de vitesses"
+                        labels={["Automatique", "Manuelle"]}
+                        name="type_vitesses"
+                        onChoiceradio={handleChangeRadio}
+                        required={true}
+                    />
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Etat"
+                        labels={[
+                            "Excellent",
+                            "Très bon",
+                            "Bon",
+                            "Correct",
+                            "Endommagé",
+                            "Pour pièces",
+                            "Neuf",
+                        ]}
+                        name="etat"
+                        onChoiceradio={handleChangeRadio}
+                    />
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Origine"
+                        labels={[
+                            "Dédouanée",
+                            "Pas encore dédouanée",
+                            "WW au Maroc",
+                            "Importée neuve",
+                        ]}
+                        name="origine"
+                        onChoiceradio={handleChangeRadio}
+                    />
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Nombre de portes"
+                        labels={[3, 5]}
+                        name="porte"
+                        onChoiceradio={handleChangeRadio}
+                    />
+                    <RadioBtns
+                        className="radioBtn"
+                        title="Première main"
+                        labels={["Oui", "Non"]}
+                        name="premiere_main"
+                        onChoiceradio={handleChangeRadio}
+                    />
+                </div>
                 <div className="allInfos">
                     <div className="info">
                         <Label text="Prix" />
@@ -194,21 +188,21 @@ const AddCar = ({ options, details, onSubmit }) => {
                         />
                     </div>
                     <div className="info">
-                    <Label text="Titre de l'annonce" />
-                    <Input
-                        name="titre"
-                        value={formData.titre}
-                        type="text"
-                        onChange={handleChange}
-                    />
+                        <Label text="Titre de l'annonce" />
+                        <Input
+                            name="titre"
+                            value={formData.titre}
+                            type="text"
+                            onChange={handleChange}
+                        />
                     </div>
                     <div className="info">
-                    <Label text="Texte de l'annonce"></Label>
-                    <Textarea
-                        name="texte"
-                        value={formData.texte}
-                        onChange={handleChange}
-                    />
+                        <Label text="Texte de l'annonce"></Label>
+                        <Textarea
+                            name="texte"
+                            value={formData.texte}
+                            onChange={handleChange}
+                        />
                     </div>
                 </div>
                 <Checkbox

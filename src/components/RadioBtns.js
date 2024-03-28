@@ -9,7 +9,7 @@ const RadioBtns = ({ id,className,title, labels, name, onChoiceradio, required }
                         <div key={index}>
                             <input
                             className={className}
-                                id={index}
+                                id={label}
                                 type="radio"
                                 name={name}
                                 value={label}
@@ -18,7 +18,7 @@ const RadioBtns = ({ id,className,title, labels, name, onChoiceradio, required }
                                 }
                                 required={required}
                         />
-                            <label htmlFor={index}>{label}</label>
+                            <label htmlFor={label}>{label}</label>
                         </div>
                     );
                 })}
