@@ -80,6 +80,11 @@ const AddCar = ({ options, details, onSubmit }) => {
 
     return (
         <>
+            <h1>Détails de l'annonce</h1>
+            <h2>
+                Ajouter plus de détails sur votre annonce pour un maximum de
+                visbilité
+            </h2>
             <form onSubmit={handleSubmit}>
                 <div className="allSelect">
                     <div className="selectItem">
@@ -203,6 +208,11 @@ const AddCar = ({ options, details, onSubmit }) => {
                         onChoiceradio={handleChangeRadio}
                     />
                 </div>
+                <h1>Information de l'annonce</h1>
+                <h2>
+                    Une annonce avec un prix exacte et une description bien
+                    détaillé a 10 fois plus de visibilité
+                </h2>
                 <div className="allInfos">
                     <div className="info">
                         <div className="iconAnd">
@@ -241,6 +251,8 @@ const AddCar = ({ options, details, onSubmit }) => {
                         />
                     </div>
                 </div>
+                <h1>Plus de détails</h1>
+                <h2>Ajouter des détails supplémentaires</h2>
                 <Checkbox
                     details={details}
                     type="checkbox"
