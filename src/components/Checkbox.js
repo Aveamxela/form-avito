@@ -6,18 +6,18 @@ const Checkbox = ({ details, value, checked, onChange }) => {
     <div>
       {details.map((detail, index) => {
         return (
-          <>
-            <Input
-              name={detail}
-              type="checkbox"
-              checked={checked}
-              onChange={onChange}
-              key={index}
-              value={value}
-            />
-            <Label text={detail} />
-          </>
-        )
+            <div key={index}
+>
+                <Input
+                    name={detail}
+                    type="checkbox"
+                    checked={checked}
+                    onChange={onChange}
+                    value={value}
+                />
+                <Label text={detail} />
+            </div>
+        );
       })}
     </div>
   );
