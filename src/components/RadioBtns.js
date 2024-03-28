@@ -1,21 +1,27 @@
-const RadioBtns = ({ title, labels, name, onChoiceradio }) => {
+const RadioBtns = ({ id,className,title, labels, name, onChoiceradio }) => {
     
     return (
         <>
-            <h5>{title}</h5>
-            {labels.map((label, index, e) => {
-                return (
-                    <div key={index}>
-                        <label>{label}</label>
-                        <input
-                            type="radio"
-                            name={name}
-                            value={label}
-                            onChange={(e) => onChoiceradio(name,e.target.value)}
-                        />
-                    </div>
-                );
-            })}
+            <h3>{title}</h3>
+            <div className="radioBtns">
+                {labels.map((label, index, e) => {
+                    return (
+                        <div key={index}>
+                            <input
+                            className={className}
+                                id={index}
+                                type="radio"
+                                name={name}
+                                value={label}
+                                onChange={(e) =>
+                                    onChoiceradio(name, e.target.value)
+                                }
+                            />
+                            <label htmlFor={index}>{label}</label>
+                        </div>
+                    );
+                })}
+            </div>
         </>
     );
 };

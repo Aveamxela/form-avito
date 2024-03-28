@@ -94,10 +94,12 @@ const AddCar = ({ options }) => {
                 </div>
                 <Label text="Texte de l'annonce"></Label>
                 <Textarea
-                  name="texte"
-                  value={formData.texte}
-                  onChange={handleChange}/>
+                    name="texte"
+                    value={formData.texte}
+                    onChange={handleChange}
+                />
                 <RadioBtns
+                    className="radioBtn"
                     title="Type de carburant"
                     labels={[
                         "Diesel",
@@ -109,8 +111,9 @@ const AddCar = ({ options }) => {
                     name="type_carburant"
                     onChoiceradio={handleChangeRadio}
                 />
-               
+
                 <RadioBtns
+                    className="radioBtn"
                     title="Boite de vitesses"
                     labels={["Automatique", "Manuelle"]}
                     name="type_vitesses"
@@ -119,6 +122,7 @@ const AddCar = ({ options }) => {
                     }
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Etat"
                     labels={[
                         "Excellent",
@@ -133,6 +137,7 @@ const AddCar = ({ options }) => {
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Origine"
                     labels={[
                         "Dédouanée",
@@ -144,21 +149,20 @@ const AddCar = ({ options }) => {
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Nombre de portes"
                     labels={[3, 5]}
                     name="porte"
                     onChoiceradio={handleChangeRadio}
                 />
                 <RadioBtns
+                    className="radioBtn"
                     title="Première main"
-                    labels={[
-                        "Oui",
-                        "Non",
-                    ]}
+                    labels={["Oui", "Non"]}
                     name="premiere_main"
                     onChoiceradio={handleChangeRadio}
                 />
-                    </form>
+            </form>
         </>
     );
 };
