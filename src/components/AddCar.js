@@ -27,7 +27,7 @@ const AddCar = ({ options }) => {
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        console.log(e.target.value);
+        console.log(e.target);
         setFormData((prevState) => ({
             ...prevState,
             [name]: value,
@@ -86,13 +86,15 @@ const AddCar = ({ options }) => {
                         value={formData.titre}
                         type="text"
                         onChange={handleChange}
+                        required={true}
                     />
                 </div>
                 <Label text="Texte de l'annonce"></Label>
                 <Textarea
                   name="texte"
                   value={formData.texte}
-                  onChange={handleChange}/>
+                  onChange={handleChange}
+                  required={true}/>
                 <RadioBtns
                     title="Type de carburant"
                     labels={[
@@ -104,12 +106,14 @@ const AddCar = ({ options }) => {
                     ]}
                     name="type_carburant"
                     onChoiceradio={handleChangeRadio}
+                    required={true}
                 />
                 <RadioBtns
                     title="Boite de vitesses"
                     labels={["Automatique", "Manuelle"]}
                     name="type_vitesses"
                     onChoiceradio={handleChangeRadio}
+                    required={true}
                 />
                 <RadioBtns
                     title="Etat"
